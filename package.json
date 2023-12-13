@@ -8,11 +8,13 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.2",
     "chart.js": "^3.0.0",
+    "cors": "^2.8.5",
     "cypress": "^13.6.1",
     "d3": "^7.8.5",
     "dotenv": "^16.3.1",
     "jsonwebtoken": "^9.0.2",
     "mysql": "^2.18.1",
+    "mysql2": "^3.6.5",
     "puppeteer": "^21.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,10 +24,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run start-react\" \"npm run start-server\"",
     "build": "react-scripts build",
-    "test": "react-scripts test ",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start-react": "react-scripts start",
+    "start-server": "node server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +54,7 @@
     "@babel/preset-env": "^7.23.6",
     "@babel/preset-react": "^7.23.3",
     "@babel/register": "^7.22.15",
+    "concurrently": "^8.2.2",
     "cypress": "^13.6.1",
     "jest": "^27.5.1",
     "puppeteer": "^21.6.0"
