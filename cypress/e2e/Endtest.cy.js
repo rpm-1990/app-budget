@@ -3,7 +3,7 @@
 describe('Signup Page', () => {
   beforeEach(() => {
     // Visit the signup page before each test
-    cy.visit('http://104.236.195.128:3001/Pages/SignupPage');
+    cy.visit('http://68.183.24.210:3001/Pages/SignupPage');
   });
 
   it('allows user signup and performs visual regression testing', () => {
